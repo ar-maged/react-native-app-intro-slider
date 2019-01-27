@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
+  ImageBackground,
   Dimensions,
   Platform,
 } from 'react-native';
@@ -19,9 +19,18 @@ export default class DefaultSlide extends React.PureComponent {
     }
     return (
       <View style={[styles.mainContent, style]}>
-        <Text style={[styles.title, this.props.titleStyle]}>{this.props.title}</Text>
-        <Image source={this.props.image} style={this.props.imageStyle} />
-        <Text style={[styles.text, this.props.textStyle]}>{this.props.text}</Text>
+        <ImageBackground
+          source={this.props.image}
+          style={this.props.imageStyle}
+        >
+          <Text style={[styles.title, this.props.titleStyle]}>
+            {this.props.title}
+          </Text>
+
+          <Text style={[styles.text, this.props.textStyle]}>
+            {this.props.text}
+          </Text>
+        </ImageBackground>
       </View>
     );
   }

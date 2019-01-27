@@ -20,8 +20,6 @@ const isIphoneX =
   !Platform.isTVOS &&
   (height === 812 || width === 812);
 
-const isAndroidRTL = I18nManager.isRTL && Platform.OS === 'android';
-
 export default class AppIntroSlider extends React.Component {
   static defaultProps = {
     activeDotStyle: {
@@ -191,7 +189,7 @@ export default class AppIntroSlider extends React.Component {
     );
   };
 
-  _rtlSafeIndex = i => (isAndroidRTL ? this.props.slides.length - 1 - i : i);
+  _rtlSafeIndex = i => i;
 
   _onMomentumScrollEnd = e => {
     const offset = e.nativeEvent.contentOffset.x;
@@ -251,6 +249,7 @@ export default class AppIntroSlider extends React.Component {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
           bounces={false}
+          decelerationRate={1}
           style={styles.flatList}
           renderItem={this._renderItem}
           onMomentumScrollEnd={this._onMomentumScrollEnd}

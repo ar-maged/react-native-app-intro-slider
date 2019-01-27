@@ -1,6 +1,6 @@
 {
   "name": "@ar-maged/react-native-app-intro-slider",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple and configurable app introduction slider for react native",
   "main": "AppIntroSlider.js",
   "repository": {
